@@ -11,7 +11,17 @@ export default function AllPlayers() {
     function renderAllPlayers() {
         console.log({ players })
        return players.map((player) => {
-            return <p key={player.id}>{player.name}</p>
+            return (
+                <div key={player.id}>
+                    <p>{player.id}</p>
+                    <p>{player.name}</p>
+                    <p>{player.breed}</p>
+                    <img src={player.imageUrl} alt={`${player.name}'s picture is missing`} />
+                    <button>See Details</button>
+                    <button>Delete Player</button>
+                </div>
+                
+            ) 
         });
     }
 
