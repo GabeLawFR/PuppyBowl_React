@@ -4,3 +4,17 @@
   padding: 2rem;
   text-align: center;
 }
+
+
+.navbar {
+  top: 0;
+  /* left: 0;
+  right: 0; */
+  /* width: 100%; */
+  background-color: rgb(236, 119, 10);
+  /* padding: 15px 10px;
+  justify-content: space-evenly;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-sizing: border-box; */
+}
