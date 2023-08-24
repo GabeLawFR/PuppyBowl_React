@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { addNewPlayer } from "../API/ajaxHelpers";
 
 
@@ -8,11 +9,10 @@ export default function NewPlayerForm() {
     const [breed, setBreed] = useState("");
     const [status, setStatus] = useState("");
     const [image, setImage] = useState("");
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
-
-        
         try {
             const newPlayer = await addNewPlayer(name, breed, status, image);
             console.log("New player created:", newPlayer);
@@ -20,6 +20,7 @@ export default function NewPlayerForm() {
             setBreed("");
             setStatus("");
             setImage("");
+            navigate('/');
         } catch (error) {
             console.error("Couldn't create player:", error);
         }
