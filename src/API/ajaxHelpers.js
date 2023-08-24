@@ -17,16 +17,38 @@ export async function fetchAllPlayers() {
 }
 
 
-export const fetchSinglePlayer = async (playerId) => {
+export async function fetchSinglePlayer(playerId) {
     try {
         const response = await fetch(`${BASE_URL}/players/${playerId}`);
-        const result = await response.json();
-        console.log(result);
-        return result.data.player;
+        const players = await response.json();
+        console.log(players);
+        return players.data.player;
       } catch (err) {
         console.error(err);
       }
 };
+
+export async function addNewPlayer(name, breed, status, image) {
+    try {
+        const response = await fetch(`${BASE_URL}/players`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+              body: JSON.stringify({ name, breed, status, image}),
+            }
+        );
+        const players = await response.json();
+        return (players.data);
+    } catch (err) {
+        console.error("Oops, something went wrong with adding that player!", err);
+    }
+};
+
+
+
+
 
 
 // export async function fetchSinglePlayer(Id) {

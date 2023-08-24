@@ -8,9 +8,9 @@ export default function MainContainer() {
     return (
         <div className="main-container">
             <Routes>
-                <Route path='/new_player_form' element={<NewPlayerForm />} />
                 <Route path='/' element={<AllPlayers />} />
                 <Route path='/players/:id' element={<SinglePlayer />} />
+                <Route path='/new_player_form' element={<NewPlayerForm />} />
             </Routes>
         </div>
     );

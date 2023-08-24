@@ -25,11 +25,12 @@ export default function SinglePlayer() {
             <div className="player-card" key={player.id}>
                 <p className="id-tag">{`#${player.id}`}</p>
                 <h4 className="name-tag">{player.name}</h4>
-                <p>{player.breed}</p>
+                <p>Breed:{player.breed}</p>
+                <p>Status:{player.status}</p>
                 <div className="image-container">
                     <img src={player.imageUrl} alt={`${player.name}'s picture is missing`} />
                 </div>
-                <button onClick={() => navigate('/')} >Go Back</button>
+                <button className="buttons" onClick={() => navigate('/')} >Go Back</button>
             </div>
         )
     }

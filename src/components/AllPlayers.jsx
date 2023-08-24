@@ -26,12 +26,13 @@ export default function AllPlayers() {
                 <div className="player-card" key={player.id}>
                     <p className="id-tag">{`#${player.id}`}</p>
                     <h4 className="name-tag">{player.name}</h4>
-                    <p>{player.breed}</p>
+                    <p>Breed:{player.breed}</p>
+                    <p>Status:{player.status}</p>
                     <div className="image-container">
                         <img src={player.imageUrl} alt={`${player.name}'s picture is missing`} />
                     </div>
-                    <button onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
-                    <button>Delete Player</button>
+                    <button className="buttons" onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
+                    <button className="buttons">Delete Player</button>
                 </div>
             ) 
         });
