@@ -4,9 +4,16 @@
   width: 100vw;
   height: 100vh;
   padding: 2rem;
-  /* text-align: center; */
+  text-align: center;
 }
 
+body {
+  background-image: url(https://dogoday.com/files/2021/02/APL_PuppyBowlXVII_2048x1152_r2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
 
 .navbar {
   display: flex;
@@ -22,12 +29,28 @@
   box-sizing: border-box;
 }
 
+.search-bar {
+  width: 250px;
+  display: grid;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px;
+}
+
+.search-button {
+  width: 50%;
+  margin: auto;
+}
+
 
 .links {
   text-decoration: none;
   text-decoration: underline;
   color: cornsilk;
   font-size: 30px;
+  font-weight: bolder;
   /* justify-content: space-evenly; */
 }
 
@@ -36,13 +59,7 @@
   transition: 0.4s;
 }
 
-body {
-  background-image: url(https://dogoday.com/files/2021/02/APL_PuppyBowlXVII_2048x1152_r2.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
+
 
 .players-container {
   display: flex;
@@ -109,21 +126,35 @@ body {
 .form-container {
   width: 60%;
   margin: 0 auto;
+  box-shadow: 2px 4px 23px rgb(255, 229, 229);
+  background: rgb(18, 62, 32);
+}
+
+.form-title {
+  margin: 10px auto 10px auto;
+  padding: 15px;
+  box-shadow: 1px 1px 20px rgb(185, 185, 255);
+  background-color: rgb(0, 105, 211);
+  border-radius: 5px;
+  width: 50%;
 }
 
 .ze-form {
   display: grid;
-  background-color: dimgray;
   box-shadow: 1px 1px 1px black;
-  /* border-radius: 10px; */
-
 }
 
 .labels {
+  text-align: auto;
   padding: 10px;
-  color: rgb(215, 180, 244);
+  color: rgb(232, 151, 29);
   font-size: 25px;
   text-shadow: 1px 1px 1px black;
+}
+
+.radios {
+  display: flex;
+  margin: auto;
 }
 
 .inputs {
@@ -134,9 +165,9 @@ body {
 .buttons {
   color: rgb(112, 185, 248);
   border-radius: 10px;
-  padding: 5px 10px 5px;
-  width: 80%;
-  font-size: large;
-  margin: 0 auto;
+  /* padding: 5px 10px 5px; */
+  width: 40%;
+  /* font-size: large; */
+  margin: 0 auto 10px;
 }
 

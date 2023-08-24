@@ -28,7 +28,7 @@ export default function NewPlayerForm() {
 
     return (
         <>
-            <h2>Add A New Puppy To The Roaster!</h2>
+            <h2 className="form-title">Add A New Puppy To The Roaster!</h2>
             <div className="form-container">
                 <form className="ze-form" onSubmit={handleSubmit}>
                     <label className="labels">
@@ -51,7 +51,7 @@ export default function NewPlayerForm() {
                         onChange={(e) => setBreed(e.target.value)} 
                         />
                     </label>
-                    <div className="labels">
+                    <div className="labels radios">
                         Status:
                         <br />
                         <label>
