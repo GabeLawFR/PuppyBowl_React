@@ -41,8 +41,22 @@ export async function addNewPlayer(name, breed, status, image) {
         );
         const players = await response.json();
         return (players.data);
-    } catch (err) {
-        console.error("Oops, something went wrong with adding that player!", err);
+    } catch (error) {
+        console.error("Oops, something went wrong with adding that player!", error);
+    }
+};
+
+export async function deletePlayer(playerId) {
+    try {
+        const response = await fetch(`${BASE_URL}/players/${playerId}`, 
+            {
+                method: 'DELETE',
+            })
+            const players = await response.json();
+            console.log(`Deleted puppy #${playerId}`, players);
+            return (players.data);
+    } catch (error) {
+        console.error("Whoops, trouble removing the player from the roster!", error);
     }
 };
 

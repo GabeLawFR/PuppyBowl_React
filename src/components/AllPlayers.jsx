@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAllPlayers } from  "../API/ajaxHelpers";
+import { fetchAllPlayers, deletePlayer } from  "../API/ajaxHelpers";
 
 
 
@@ -19,6 +19,16 @@ export default function AllPlayers() {
         allPlayersHandler();
     }, []);
 
+    async function handleDeletePlayer(playerId) {
+        try {
+            await deletePlayer(playerId);
+            const updatePlayers = await fetchAllPlayers();
+            setPlayers(updatePlayers.players);
+        } catch (error) {
+            console.error("Error deleting player:", error);
+        }
+    }
+
     function renderAllPlayers() {
         // console.log({ players })
        return players.map((player) => {
@@ -32,7 +42,7 @@ export default function AllPlayers() {
                         <img src={player.imageUrl} alt={`${player.name}'s picture is missing`} />
                     </div>
                     <button className="buttons" onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
-                    <button className="buttons">Delete Player</button>
+                    <button className="buttons" onClick={() => handleDeletePlayer(player.id)} >Delete Player</button>
                 </div>
             ) 
         });
