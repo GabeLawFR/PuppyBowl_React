@@ -4,21 +4,36 @@
   width: 100vw;
   height: 100vh;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 
 .navbar {
+  display: flex;
   top: 0;
   /* left: 0;
-  right: 0; */
-  /* width: 100%; */
+  right: 0;
+  width: 100%; */
   background-color: rgb(236, 119, 10);
-  /* padding: 15px 10px;
+  padding: 15px 10px; 
   justify-content: space-evenly;
   margin-bottom: 1em;
   border-radius: 5px;
-  box-sizing: border-box; */
+  box-sizing: border-box;
+}
+
+
+.links {
+  text-decoration: none;
+  text-decoration: underline;
+  color: cornsilk;
+  font-size: 30px;
+  /* justify-content: space-evenly; */
+}
+
+.links:hover {
+  color: rgb(0, 0, 0);
+  transition: 0.4s;
 }
 
 body {

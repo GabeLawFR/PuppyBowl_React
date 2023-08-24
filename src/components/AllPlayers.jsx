@@ -20,12 +20,15 @@ export default function AllPlayers() {
     }, []);
 
     async function handleDeletePlayer(playerId) {
-        try {
-            await deletePlayer(playerId);
-            const updatePlayers = await fetchAllPlayers();
-            setPlayers(updatePlayers.players);
-        } catch (error) {
-            console.error("Error deleting player:", error);
+        const confirmed = window.confirm("Are you sure you want to delete this player? Just checking...");
+        if (confirmed) {
+            try {
+                await deletePlayer(playerId);
+                const updatePlayers = await fetchAllPlayers();
+                setPlayers(updatePlayers.players);
+            } catch (error) {
+                console.error("Error deleting player:", error);
+            }
         }
     }
 
@@ -35,7 +38,7 @@ export default function AllPlayers() {
             return (
                 <div className="player-card" key={player.id}>
                     <p className="id-tag">{`#${player.id}`}</p>
-                    <h4 className="name-tag">{player.name}</h4>
+                    <h3 className="name-tag">{player.name}</h3>
                     <p>Breed:{player.breed}</p>
                     <p>Status:{player.status}</p>
                     <div className="image-container">

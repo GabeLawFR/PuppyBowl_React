@@ -24,7 +24,7 @@ export default function SinglePlayer() {
         return (
             <div className="player-card" key={player.id}>
                 <p className="id-tag">{`#${player.id}`}</p>
-                <h4 className="name-tag">{player.name}</h4>
+                <h3 className="name-tag">{player.name}</h3>
                 <p>Breed:{player.breed}</p>
                 <p>Status:{player.status}</p>
                 <div className="image-container">

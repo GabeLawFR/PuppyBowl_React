@@ -8,10 +8,10 @@ function App() {
   
 
   return (
-    <>
+    <div className='main-container'>
       <NavBar />
       <MainContainer />
-    </>
+    </div>
   );
 }
 
