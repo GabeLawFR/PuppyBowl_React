@@ -7,7 +7,7 @@ import { addNewPlayer } from "../API/ajaxHelpers";
 export default function NewPlayerForm() {
     const [name, setName] = useState("");
     const [breed, setBreed] = useState("");
-    const [status, setStatus] = useState("");
+    const [status, setStatus] = useState("bench");
     const [image, setImage] = useState("");
     const navigate = useNavigate();
 

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { fetchAllPlayers, deletePlayer } from  "../API/ajaxHelpers";
 
 
 
 
-export default function AllPlayers() {
+export default function AllPlayers({ searchQuery }) {
     const [players, setPlayers] = useState([]);
-    const navigate = useNavigate();
     const [filteredPlayers, setFilteredPlayers] = useState([]);
+    const navigate = useNavigate();
+    const location = useLocation();
     // const [loading, setLoading] = useState(true);
     
     useEffect(() => {
@@ -22,16 +23,17 @@ export default function AllPlayers() {
     }, []);
 
     useEffect(() => {
-        const searchQuery = new URLSearchParams(location.search).get("query");
-        
-        if (searchQuery) {
-            const filtered = players.filter(player => player.name.toLowerCase().includes(searchQuery.toLowerCase()));
+            console.log("SearchQuery pre filter", searchQuery)
+            if (searchQuery) {
+            const filtered = players.filter((player) => 
+              player.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
             setFilteredPlayers(filtered);
-            console.log("Fired from searchQuery useEffect")
-        } else {
+            console.log("useEffect post filter", filtered)
+            } else {
             setFilteredPlayers(players);
-        }
-    }, [location.search, players])
+            }
+    }, [players, searchQuery]);
 
     async function handleDeletePlayer(playerId) {
         const confirmed = window.confirm("Are you sure you want to delete this player? Just checking...");
@@ -46,10 +48,12 @@ export default function AllPlayers() {
         }
     }
 
+    
+
     function renderAllPlayers() {
         // console.log({ players })
         return filteredPlayers.map((player) => {
-        console.log("Mapped filteredPlayers")
+        // console.log(filteredPlayers)
             return (
                 <div className="player-card" key={player.id}>
                     <p className="id-tag">{`#${player.id}`}</p>

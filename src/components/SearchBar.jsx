@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-export default function SearchBar() {
-    const navigate = useNavigate();
+export default function SearchBar({ onSearch }) {
+    // const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
+    console.log("Received onSearch1", onSearch);
+    console.log("Received onSearch2", searchQuery)
 
-    const handleSearchClick = () => {
-        console.log("Clicked search button")
-        navigate(`/search?query=${encodeURIComponent(searchQuery)}`);
-    }
+    const handleSearchChange = (event) => {
+        const newQuery = event.target.value;
+        console.log("Typing in search bar", newQuery)
+        setSearchQuery(newQuery);
+        if (onSearch) {
+            onSearch(newQuery);
+        }
+    };
+    
 
     return (
         <div className="search-bar">
@@ -17,9 +24,9 @@ export default function SearchBar() {
             type="text"
             placeholder="Search for a puppy..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={handleSearchChange}
             />
-            <button className="search-button" onClick={handleSearchClick}>Search</button>
+            {/* <button className="search-button" onClick={handleSearchClick}>Search</button> */}
         </div>
     )
 }

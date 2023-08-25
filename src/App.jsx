@@ -5,12 +5,17 @@ import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
-  
+  //
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query) => {
+    setSearchQuery(query)
+  };
 
   return (
     <div className='main-container'>
-      <NavBar />
-      <MainContainer />
+      <NavBar onSearch={handleSearch} />
+      <MainContainer searchQuery={searchQuery}/>
     </div>
   );
 }
