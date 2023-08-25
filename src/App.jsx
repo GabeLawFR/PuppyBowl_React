@@ -5,9 +5,8 @@ import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
-  //
+  // handleSearch placed here to pass down prop to 
   const [searchQuery, setSearchQuery] = useState("");
-
   const handleSearch = (query) => {
     setSearchQuery(query)
   };

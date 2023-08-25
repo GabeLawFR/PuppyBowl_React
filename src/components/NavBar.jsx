@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-
+// onSearch passed down from App component, passing it down to SearchBar component
 export default function NavBar({ onSearch }) {
 
     return (

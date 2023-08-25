@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { fetchAllPlayers, deletePlayer } from  "../API/ajaxHelpers";
 
-
-
-
+// searchQuery passed from MainContainer component
 export default function AllPlayers({ searchQuery }) {
     const [players, setPlayers] = useState([]);
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const navigate = useNavigate();
-    const location = useLocation();
-    // const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         async function allPlayersHandler() {
@@ -21,7 +17,8 @@ export default function AllPlayers({ searchQuery }) {
         }
         allPlayersHandler();
     }, []);
-
+    
+    // useEffect to filter through players to match with the searchBar's query using .filter(). If a match is found, filtered is updated and then rendered, if nothing, then players is rendered
     useEffect(() => {
             console.log("SearchQuery pre filter", searchQuery)
             if (searchQuery) {
@@ -34,7 +31,8 @@ export default function AllPlayers({ searchQuery }) {
             setFilteredPlayers(players);
             }
     }, [players, searchQuery]);
-
+    
+    // Function to delete player when delete button is clicked and info message is confirmed, aided by ajax API delete function
     async function handleDeletePlayer(playerId) {
         const confirmed = window.confirm("Are you sure you want to delete this player? Just checking...");
         if (confirmed) {
@@ -47,8 +45,6 @@ export default function AllPlayers({ searchQuery }) {
             }
         }
     }
-
-    
 
     function renderAllPlayers() {
         // console.log({ players })
@@ -66,11 +62,9 @@ export default function AllPlayers({ searchQuery }) {
                     <button className="buttons" onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
                     <button className="buttons" onClick={() => handleDeletePlayer(player.id)} >Delete Player</button>
                 </div>
-            ) 
+            );
         });
     }
-
-    
 
     if (!players) {
         return <p>Loading Content...</p>

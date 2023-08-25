@@ -4,6 +4,7 @@ import AllPlayers from "./AllPlayers";
 import SinglePlayer from "./SinglePlayer";
 import NewPlayerForm from "./NewPlayerForm";
 
+// Main container component used for clarity, searchQuery passed down to AllPlayers component
 export default function MainContainer({ searchQuery }) {
     return (
         <div className="main-container">

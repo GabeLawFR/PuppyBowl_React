@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 
+// SeaarchBar component getting prop from NavBar component
 export default function SearchBar({ onSearch }) {
-    // const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
     console.log("Received onSearch1", onSearch);
     console.log("Received onSearch2", searchQuery)
 
+    // Handles changes made to the SearchBar component's input field, updating the searchQuery state live, not onClick
     const handleSearchChange = (event) => {
         const newQuery = event.target.value;
         console.log("Typing in search bar", newQuery)
@@ -15,7 +15,6 @@ export default function SearchBar({ onSearch }) {
             onSearch(newQuery);
         }
     };
-    
 
     return (
         <div className="search-bar">
@@ -26,7 +25,6 @@ export default function SearchBar({ onSearch }) {
             value={searchQuery}
             onChange={handleSearchChange}
             />
-            {/* <button className="search-button" onClick={handleSearchClick}>Search</button> */}
         </div>
-    )
+    );
 }
