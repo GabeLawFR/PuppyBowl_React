@@ -63,7 +63,8 @@ export async function deletePlayer(playerId) {
 export async function fetchAllTeams() {
     try {
         const response = await fetch(`${BASE_URL}/teams`);
-        const teams = await response.json();
+        const data = await response.json();
+        const teams = data.data.teams;
         console.log(teams);
         return(teams);
     } catch (error) {
