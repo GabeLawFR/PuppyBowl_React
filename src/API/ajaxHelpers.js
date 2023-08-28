@@ -4,7 +4,7 @@ const BASE_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}`;
 
 export async function fetchAllPlayers() {
     try {
-        const fetchAllPlayerUrl = `${BASE_URL}/players`
+        const fetchAllPlayerUrl = (`${BASE_URL}/players`)
         const response = await fetch(fetchAllPlayerUrl);
         const players = await response.json();
         console.log("Fired from fetchAllPlayers", {players});
@@ -60,31 +60,14 @@ export async function deletePlayer(playerId) {
     }
 };
 
+export async function fetchAllTeams() {
+    try {
+        const response = await fetch(`${BASE_URL}/teams`);
+        const teams = await response.json();
+        console.log(teams);
+        return(teams);
+    } catch (error) {
+        console.error("Couldn't fetch the teams!")
+    }
 
-
-
-
-
-// export async function fetchSinglePlayer(Id) {
-//     try {
-//         const fetchSinglePlayerUrl = `${BASE_URL}/players`;
-//         const response = await fetch(fetchSinglePlayerUrl);
-//         const players = await response.json();
-    
-//         if (players.success && players.data && players.data.players) {
-  
-//           // Sort through players array and match corresponding Id
-//           const player = players.data.players.find((player) => player.id === Id);
-//           if (player) {
-//             return player;
-//           } else {
-//             throw new Error(`Player with ID ${Id} not found.`);
-//           }
-//         } else {
-//           throw new Error('No players found in the API response.');
-//         }
-//       } catch (error) {
-//         console.error(`Oh no, trouble fetching player #${Id}!`, error);
-//         throw error;
-//       }
-//     };
+};

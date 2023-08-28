@@ -53,14 +53,14 @@ export default function AllPlayers({ searchQuery }) {
             return (
                 <div className="player-card" key={player.id}>
                     <p className="id-tag">{`#${player.id}`}</p>
-                    <h3 className="name-tag">{player.name}</h3>
-                    <p>Breed:{player.breed}</p>
-                    <p>Status:{player.status}</p>
-                    <div className="image-container">
+                    <h3 className="name-tag full-width">{player.name}</h3>
+                    <p className="full-width">Breed:{player.breed}</p>
+                    <p className="full-width">Status:{player.status}</p>
+                    <div className="image-container full-width">
                         <img src={player.imageUrl} alt={`${player.name}'s picture is missing`} />
                     </div>
-                    <button className="buttons" onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
-                    <button className="buttons" onClick={() => handleDeletePlayer(player.id)} >Delete Player</button>
+                    <button className="buttons button1" onClick={() => navigate(`/players/${player.id}`)} >See Details</button>
+                    <button className="buttons button2" onClick={() => handleDeletePlayer(player.id)} >Delete Player</button>
                 </div>
             );
         });
