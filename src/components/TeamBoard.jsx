@@ -22,13 +22,16 @@ export default function TeamBoard() {
 
     return (
         <div>
-            <h2 className="titles board-title">Here Are The Teams And Their Available Puppies</h2>
+            <h2 className="titles board-title">Here Are The Team Names, Their Score And Their Available Puppies</h2>
             <div className="board-container">
                 {teams.map((team) => (
                 <table key={team.id} className="team-table">
                     <thead>
                     <tr>
-                        <th colSpan="2" className="table-title">{team.name.toUpperCase()}</th>
+                        <th colSpan="2" className="table-title">{team.name.toUpperCase()}
+                        <br />
+                        <p className="score">Score: {team.score}</p>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>

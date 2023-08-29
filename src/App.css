@@ -115,7 +115,7 @@ body {
   grid-template-rows: 30px 40px 1fr 30px;
   color: rgb(255, 183, 0);
   text-shadow: 1px 1px 2px black;
-  background: rgb(25, 98, 70);
+  background: rgb(1, 135, 84);
   text-align: center;
   font-weight: bold;
   flex: 0 1 230px;
@@ -255,6 +255,19 @@ body {
   margin: 15px auto;
 }
 
+.board-title{
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px 1px black ;
+  margin: 10px auto 20px auto;
+  padding: 15px;
+  box-shadow: 1px 1px 20px rgb(185, 185, 255);
+  background-color: rgb(0, 105, 211);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 50%;
+}
+
 .board-container {
   display: flex;
   flex-wrap: wrap;
@@ -273,33 +286,24 @@ body {
   /* align-items: center; */
   box-shadow: 1px 1px 35px black;
   border-radius: 5px;
+  border-collapse: collapse;
   padding: 5px 20px 5px 20px;
-  margin: 5px;
   width: 50%;
   margin: 0 auto;
   box-shadow: 2px 4px 23px rgb(255, 229, 229);
   background-image: linear-gradient(0deg, rgb(2, 26, 15), rgb(14, 135, 74));
 }
 
-.board-title{
-  display: flex;
-  justify-content: center;
-  text-shadow: 1px 1px 1px black ;
-  margin: 10px auto 20px auto;
-  padding: 15px;
-  box-shadow: 1px 1px 20px rgb(185, 185, 255);
-  background-color: rgb(0, 105, 211);
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  width: 50%;
-}
-
 .table-title {
   border-bottom: 5px solid black;
-  font-size: 20px;
+  font-size: 30px;
   color: rgb(255, 191, 14);
   width: 100%;
   /* padding: 10px 0; */
+}
+
+.score {
+  font-size: 20px;
 }
 
 .table-row {
