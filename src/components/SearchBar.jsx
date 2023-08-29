@@ -18,6 +18,7 @@ export default function SearchBar({ onSearch }) {
 
     return (
         <div className="search-bar">
+            <p className="search-hint">Search For A Puppy By Name</p>
             <input
             className="search-input"
             type="text"
