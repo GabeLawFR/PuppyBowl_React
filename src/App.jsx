@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import MainContainer from './components/MainContainer';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
   };
 
   return (
-    <div className='main-container'>
-      <NavBar onSearch={handleSearch} />
-      <MainContainer searchQuery={searchQuery}/>
-    </div>
+      <div>
+        <NavBar onSearch={handleSearch} />
+        <MainContainer searchQuery={searchQuery}/>
+        <Footer />
+      </div>
   );
 }
 

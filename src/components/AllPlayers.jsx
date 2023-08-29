@@ -71,9 +71,11 @@ export default function AllPlayers({ searchQuery }) {
     }
 
     return ( 
-        <div className="players-container">
-            {renderAllPlayers()}
+        <div>
+            <h1 className="titles main-title">Welcome to Puppy Bowl!</h1>
+            <div className="players-container">
+                {renderAllPlayers()}
+            </div>
         </div>
-    )
-    
+    ) 
 }

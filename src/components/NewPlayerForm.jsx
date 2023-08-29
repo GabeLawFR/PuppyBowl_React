@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { addNewPlayer, fetchAllTeams } from "../API/ajaxHelpers";
 
 
-
 export default function NewPlayerForm() {
     const [name, setName] = useState("");
     const [breed, setBreed] = useState("");
@@ -13,33 +12,6 @@ export default function NewPlayerForm() {
     const [teamId, setTeamId] = useState();
     const [teams, setTeams] = useState([]);
     const navigate = useNavigate();
-    
-
-    // useEffect(() => {
-    //     console.log("Selected Team ID:", selectedTeamId);
-    //     async function handleTeams() {
-    //         try {
-    //             const teams = await fetchAllTeams();
-    //             setTeams(teams);
-
-    //             // Create a mapping of team names to IDs
-    //             const map = {};
-    //             teams.forEach((team) => {
-    //                 map[team.name] = team.id;
-    //             });
-    //             setTeamIdMap(map);
-    //             console.log("Team ID Map:", map);
-    //         } catch (error) {
-    //             console.error("Problem handling teams:", error);
-    //         }
-    //     }
-    //     handleTeams();
-    // }, []);
-
-    // useEffect(() => {
-    //     console.log("Selected Team ID:", selectedTeamId);
-    // }, [selectedTeamId]);
-
     
     useEffect(() => {
         handleTeams()
@@ -102,20 +74,6 @@ export default function NewPlayerForm() {
         console.log("Handle selectedTeamId:", teamId)
     };
 
-    // const handleTeamChange = (event) => {
-    //     const selectedValue = event.target.value;
-    //     console.log(selectedValue)
-    //     setTeamId(selectedValue); // Store the selected team ID
-    // };
-    
-
-
-    // const handleTeamChange = (event) => {
-    //     setSelectedTeamId(event.target.value === "none" ? null : event.target.value);
-    //     console.log(selectedTeamId)
-    // }
-
-
     return (
         <>
             <h2 className="form-title">Add A New Puppy To The Roaster!</h2>
@@ -148,16 +106,6 @@ export default function NewPlayerForm() {
                     {/* Create radio buttons map from available teams, if more added, more will show as possible options */}
                     <div>
                         <p className="labels">Select a Team:</p>
-                            {/* <label  className="radio">
-                                <input
-                                key="No Team"
-                                type="radio"
-                                value="none"
-                                checked={teamId === }
-                                onChange={handleTeamChange}
-                                />
-                                No Team
-                            </label> */}
                         {teams.map((team) => (
                             <label  className="radio" key={team.id}>
                             <input
@@ -194,7 +142,7 @@ export default function NewPlayerForm() {
                     </label>
                     
                     <label className="labels">
-                    Image URL Link:
+                        Image URL Link:
                         <br />
                         <input
                         className="inputs"
@@ -205,9 +153,58 @@ export default function NewPlayerForm() {
                         />
                     </label>
                     <button className="buttons sub-button">Submit</button>
-
                 </form>
             </div>
         </>
     );
 }
+
+
+{/* <label  className="radio">
+    <input
+    key="No Team"
+    type="radio"
+    value="none"
+    checked={teamId === }
+    onChange={handleTeamChange}
+    />
+    No Team
+    </label> */}
+
+     // const handleTeamChange = (event) => {
+    //     const selectedValue = event.target.value;
+    //     console.log(selectedValue)
+    //     setTeamId(selectedValue); // Store the selected team ID
+    // };
+    
+
+
+    // const handleTeamChange = (event) => {
+    //     setSelectedTeamId(event.target.value === "none" ? null : event.target.value);
+    //     console.log(selectedTeamId)
+    // }
+
+    // useEffect(() => {
+    //     console.log("Selected Team ID:", selectedTeamId);
+    //     async function handleTeams() {
+    //         try {
+    //             const teams = await fetchAllTeams();
+    //             setTeams(teams);
+
+    //             // Create a mapping of team names to IDs
+    //             const map = {};
+    //             teams.forEach((team) => {
+    //                 map[team.name] = team.id;
+    //             });
+    //             setTeamIdMap(map);
+    //             console.log("Team ID Map:", map);
+    //         } catch (error) {
+    //             console.error("Problem handling teams:", error);
+    //         }
+    //     }
+    //     handleTeams();
+    // }, []);
+
+    // useEffect(() => {
+    //     console.log("Selected Team ID:", selectedTeamId);
+    // }, [selectedTeamId]);

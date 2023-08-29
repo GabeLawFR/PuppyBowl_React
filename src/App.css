@@ -1,9 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
   width: 100vw;
   height: 100vh;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -15,36 +15,62 @@ body {
   background-position: center;
 }
 
+.titles {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.main-container {
+  display: flex;
+  /* margin-top: 70px; */
+  padding-top: 60px;
+  /* margin-bottom: 60px; */
+  padding-bottom: 50px;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .navbar {
   display: flex;
+  position: fixed;
   top: 0;
-  /* left: 0;
+  left: 0;
   right: 0;
-  width: 100%; */
+  width: 100%;
   background-color: rgb(236, 119, 10);
   box-shadow: 2px 4px 23px rgb(0, 0, 0);
-  padding: 15px 10px; 
+  /* padding: 5px 10px;  */
   justify-content: space-evenly;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
   border-radius: 3px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+.footer{
+  display: flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* height: 20px; */
+  position: fixed;
+  background-color: rgb(236, 119, 10);
+  box-shadow: 2px 4px 23px rgb(0, 0, 0);
+  padding: 1px 10px; 
+  justify-content: space-evenly;
+  border-radius: 3px;
+  /* box-sizing: border-box; */
 }
 
 .search-bar {
-  width: 250px;
+  width: 450px;
   display: grid;
   align-items: center;
 }
 
 .search-input {
+  background-color: rgb(247, 235, 220);
   padding: 5px;
 }
-
-.search-button {
-  width: 50%;
-  margin: auto;
-}
-
 
 .links {
   text-decoration: none;
@@ -58,6 +84,19 @@ body {
 .links:hover {
   color: rgb(0, 0, 0);
   transition: 0.4s;
+}
+
+.main-title {
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px 1px black ;
+  margin: 10px auto 10px auto;
+  padding: 15px;
+  box-shadow: 1px 1px 20px rgb(185, 185, 255);
+  background-color: rgb(0, 105, 211);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 50%;
 }
 
 .players-container {
@@ -132,7 +171,7 @@ body {
 }
 
 .form-container {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   box-shadow: 2px 4px 23px rgb(255, 229, 229);
   background: rgb(18, 62, 32);
@@ -156,7 +195,7 @@ body {
 .labels {
   text-align: auto;
   padding: 10px;
-  color: rgb(232, 151, 29);
+  color: rgb(255, 181, 69);
   font-size: 25px;
   text-shadow: 1px 1px 1px black;
   margin: 0;
@@ -216,3 +255,59 @@ body {
   margin: 15px auto;
 }
 
+.board-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.team-table {
+  color: rgb(247, 232, 192);
+  text-shadow: 1px 1px 2px black;
+  background: rgb(25, 98, 70);
+  text-align: center;
+  font-weight: bold;
+  flex: 0 1 200px;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  box-shadow: 1px 1px 35px black;
+  border-radius: 5px;
+  padding: 5px 20px 5px 20px;
+  margin: 5px;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 2px 4px 23px rgb(255, 229, 229);
+  background-image: linear-gradient(0deg, rgb(2, 26, 15), rgb(14, 135, 74));
+}
+
+.board-title{
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 1px 1px black ;
+  margin: 10px auto 20px auto;
+  padding: 15px;
+  box-shadow: 1px 1px 20px rgb(185, 185, 255);
+  background-color: rgb(0, 105, 211);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 50%;
+}
+
+.table-title {
+  border-bottom: 5px solid black;
+  font-size: 20px;
+  color: rgb(255, 191, 14);
+  width: 100%;
+  /* padding: 10px 0; */
+}
+
+.table-row {
+  border-bottom: 1px solid bisque;
+  padding-top: 10px;
+}
+
+.status {
+  font-size: 15px;
+  color: darkgray;
+}

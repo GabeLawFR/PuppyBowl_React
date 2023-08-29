@@ -7,9 +7,9 @@ export default function NavBar({ onSearch }) {
 
     return (
         <div className="navbar">
-            <Link className="links" to='/'>Go Home</Link>
+            <Link className="titles links" to='/'>Go Home</Link>
             <SearchBar onSearch={onSearch} />
-            <Link className="links" to='/new_player_form'>Add A Puppy</Link>
+            <Link className="titles links" to='/new_player_form'>Add A Puppy</Link>
         </div>
     );
 }
