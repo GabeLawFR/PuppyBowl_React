@@ -159,11 +159,7 @@ body {
   color: rgb(232, 151, 29);
   font-size: 25px;
   text-shadow: 1px 1px 1px black;
-}
-
-.radios {
-  display: flex;
-  margin: auto;
+  margin: 0;
 }
 
 .inputs {
@@ -195,6 +191,16 @@ body {
 
 .button2{
   grid-column: 2/3;
+}
+
+.radio {
+  display: inline-flex;
+  margin: 0px 20px;
+}
+
+.sub-button {
+  width: 50%;
+  margin: 10px auto 10px;
 }
 
 .button-full {

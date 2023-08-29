@@ -27,7 +27,7 @@ export async function fetchSinglePlayer(playerId) {
       }
 };
 
-export async function addNewPlayer(name, breed, status, image) {
+export async function addNewPlayer(name, breed, status, imageUrl, teamId) {
     try {
         const response = await fetch(`${BASE_URL}/players`,
           {
@@ -35,11 +35,12 @@ export async function addNewPlayer(name, breed, status, image) {
             headers: {
               'Content-Type': 'application/json',
             },
-              body: JSON.stringify({ name, breed, status, image}),
+              body: JSON.stringify({ name, breed, status, imageUrl, teamId}),
             }
         );
         const players = await response.json();
-        console.log("Fired from addNewPlayer", players)
+        console.log("fron ajax:", teamId)
+        console.log("Fired from addNewPlayer", players.data)
         return (players.data);
     } catch (error) {
         console.error("Oops, something went wrong with adding that player!", error);

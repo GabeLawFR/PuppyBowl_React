@@ -16,7 +16,7 @@ export default function SinglePlayer() {
             const result = await fetchSinglePlayer(id);
             setPlayer(result)
             console.log("result 1", result)
-            
+
             // Match players API teamId with teams API teamId to get the player's current team name
             const teams = await fetchAllTeams();
             const matchingTeam = teams.find(team => team.id === result.teamId);
@@ -30,7 +30,7 @@ export default function SinglePlayer() {
     }, [id]);
 
     function renderSinglePlayer() {
-        console.log(`Rendering Player #${id}`)
+        console.log(`Rendering Player #${id}`, player)
         return (
             <div className="player-card" key={player.id}>
                 <p className="id-tag">{`#${player.id}`}</p>
