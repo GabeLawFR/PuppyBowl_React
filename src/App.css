@@ -90,7 +90,7 @@ body {
   display: flex;
   justify-content: center;
   text-shadow: 1px 1px 1px black ;
-  margin: 10px auto 10px auto;
+  margin: 10px auto 20px auto;
   padding: 15px;
   box-shadow: 1px 1px 20px rgb(185, 185, 255);
   background-color: rgb(0, 105, 211);
